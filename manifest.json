@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "sitr",
+  "version": "1.1",
+  "description": "sitr",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://friends.42paris.fr/*",
+    "*://profile.intra.42.fr/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://friends.42paris.fr/*",
+        "*://profile.intra.42.fr/*"
+      ],
+      "css": ["hide.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
